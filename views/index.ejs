@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <title>Weather History</title>
+</head>
+<body>
+  
+    <% if(locals.weather1) {%>
+      <div class = "title">
+        <h1>Weather for <%= city %>, <%= state %> on <%= month %> <%= day %>, <%= year%> </h1>
+      </div>
+      <div id = "gridBox">
+        <% if(Math.round((weather1*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">12 AM </br> <%= Math.round((weather1*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather1*(9/5)+32)) < 100 && Math.round((weather1*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">12 AM </br> <%= Math.round((weather1*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather1*(9/5)+32)) < 90 && Math.round((weather1*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">12 AM </br> <%= Math.round((weather1*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather1*(9/5)+32)) < 80 && Math.round((weather1*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">12 AM </br> <%= Math.round((weather1*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather1*(9/5)+32)) < 70 && Math.round((weather1*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">12 AM </br> <%= Math.round((weather1*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather1*(9/5)+32)) < 60 && Math.round((weather1*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">12 AM </br> <%= Math.round((weather1*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather1*(9/5)+32)) < 50 && Math.round((weather1*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">12 AM </br> <%= Math.round((weather1*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather1*(9/5)+32)) < 40 && Math.round((weather1*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">12 AM </br> <%= Math.round((weather1*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather1*(9/5)+32)) < 30 && Math.round((weather1*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">12 AM </br> <%= Math.round((weather1*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather1*(9/5)+32)) < 20 && Math.round((weather1*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">12 AM </br> <%= Math.round((weather1*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather1*(9/5)+32)) < 10 && Math.round((weather1*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">12 AM </br> <%= Math.round((weather1*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather1*(9/5)+32)) < 0 && Math.round((weather1*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">12 AM </br> <%= Math.round((weather1*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather1*(9/5)+32)) < -10 && Math.round((weather1*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">12 AM </br> <%= Math.round((weather1*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather1*(9/5)+32)) < -20 && Math.round((weather1*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">12 AM </br> <%= Math.round((weather1*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">12 AM </br> <%= Math.round((weather1*(9/5)+32)) %>°F</h2>
+        <% } %>
+        <% if(Math.round((weather2*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">1 AM </br> <%= Math.round((weather2*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather2*(9/5)+32)) < 100 && Math.round((weather2*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">1 AM </br> <%= Math.round((weather2*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather2*(9/5)+32)) < 90 && Math.round((weather2*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">1 AM </br> <%= Math.round((weather2*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather2*(9/5)+32)) < 80 && Math.round((weather2*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">1 AM </br> <%= Math.round((weather2*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather2*(9/5)+32)) < 70 && Math.round((weather2*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">1 AM </br> <%= Math.round((weather2*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather2*(9/5)+32)) < 60 && Math.round((weather2*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">1 AM </br> <%= Math.round((weather2*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather2*(9/5)+32)) < 50 && Math.round((weather2*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">1 AM </br> <%= Math.round((weather2*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather2*(9/5)+32)) < 40 && Math.round((weather2*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">1 AM </br> <%= Math.round((weather2*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather2*(9/5)+32)) < 30 && Math.round((weather2*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">1 AM </br> <%= Math.round((weather2*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather2*(9/5)+32)) < 20 && Math.round((weather2*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">1 AM </br> <%= Math.round((weather2*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather2*(9/5)+32)) < 10 && Math.round((weather2*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">1 AM </br> <%= Math.round((weather2*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather2*(9/5)+32)) < 0 && Math.round((weather2*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">1 AM </br> <%= Math.round((weather2*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather2*(9/5)+32)) < -10 && Math.round((weather2*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">1 AM </br> <%= Math.round((weather2*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather2*(9/5)+32)) < -20 && Math.round((weather2*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">1 AM </br> <%= Math.round((weather2*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">1 AM </br> <%= Math.round((weather2*(9/5)+32)) %>°F</h2>
+        <% } %>
+        <% if(Math.round((weather3*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">2 AM </br> <%= Math.round((weather3*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather3*(9/5)+32)) < 100 && Math.round((weather3*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">2 AM </br> <%= Math.round((weather3*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather3*(9/5)+32)) < 90 && Math.round((weather3*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">2 AM </br> <%= Math.round((weather3*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather3*(9/5)+32)) < 80 && Math.round((weather3*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">2 AM </br> <%= Math.round((weather3*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather3*(9/5)+32)) < 70 && Math.round((weather3*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">2 AM </br> <%= Math.round((weather3*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather3*(9/5)+32)) < 60 && Math.round((weather3*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">2 AM </br> <%= Math.round((weather3*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather3*(9/5)+32)) < 50 && Math.round((weather3*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">2 AM </br> <%= Math.round((weather3*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather3*(9/5)+32)) < 40 && Math.round((weather3*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">2 AM </br> <%= Math.round((weather3*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather3*(9/5)+32)) < 30 && Math.round((weather3*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">2 AM </br> <%= Math.round((weather3*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather3*(9/5)+32)) < 20 && Math.round((weather3*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">2 AM </br> <%= Math.round((weather3*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather3*(9/5)+32)) < 10 && Math.round((weather3*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">2 AM </br> <%= Math.round((weather3*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather3*(9/5)+32)) < 0 && Math.round((weather3*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">2 AM </br> <%= Math.round((weather3*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather3*(9/5)+32)) < -10 && Math.round((weather3*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">2 AM </br> <%= Math.round((weather3*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather3*(9/5)+32)) < -20 && Math.round((weather3*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">2 AM </br> <%= Math.round((weather3*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">2 AM </br> <%= Math.round((weather3*(9/5)+32)) %>°F</h2>
+        <% } %>
+        <% if(Math.round((weather4*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">3 AM </br> <%= Math.round((weather4*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather4*(9/5)+32)) < 100 && Math.round((weather4*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">3 AM </br> <%= Math.round((weather4*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather4*(9/5)+32)) < 90 && Math.round((weather4*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">3 AM </br> <%= Math.round((weather4*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather4*(9/5)+32)) < 80 && Math.round((weather4*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">3 AM </br> <%= Math.round((weather4*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather4*(9/5)+32)) < 70 && Math.round((weather4*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">3 AM </br> <%= Math.round((weather4*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather4*(9/5)+32)) < 60 && Math.round((weather4*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">3 AM </br> <%= Math.round((weather4*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather4*(9/5)+32)) < 50 && Math.round((weather4*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">3 AM </br> <%= Math.round((weather4*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather4*(9/5)+32)) < 40 && Math.round((weather4*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">3 AM </br> <%= Math.round((weather4*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather4*(9/5)+32)) < 30 && Math.round((weather4*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">3 AM </br> <%= Math.round((weather4*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather4*(9/5)+32)) < 20 && Math.round((weather4*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">3 AM </br> <%= Math.round((weather4*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather4*(9/5)+32)) < 10 && Math.round((weather4*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">3 AM </br> <%= Math.round((weather4*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather4*(9/5)+32)) < 0 && Math.round((weather4*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">3 AM </br> <%= Math.round((weather4*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather4*(9/5)+32)) < -10 && Math.round((weather4*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">3 AM </br> <%= Math.round((weather4*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather4*(9/5)+32)) < -20 && Math.round((weather4*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">3 AM </br> <%= Math.round((weather4*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">3 AM </br> <%= Math.round((weather4*(9/5)+32)) %>°F</h2>
+        <% } %>
+        <% if(Math.round((weather5*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">4 AM </br> <%= Math.round((weather5*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather5*(9/5)+32)) < 100 && Math.round((weather5*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">4 AM </br> <%= Math.round((weather5*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather5*(9/5)+32)) < 90 && Math.round((weather5*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">4 AM </br> <%= Math.round((weather5*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather5*(9/5)+32)) < 80 && Math.round((weather5*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">4 AM </br> <%= Math.round((weather5*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather5*(9/5)+32)) < 70 && Math.round((weather5*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">4 AM </br> <%= Math.round((weather5*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather5*(9/5)+32)) < 60 && Math.round((weather5*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">4 AM </br> <%= Math.round((weather5*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather5*(9/5)+32)) < 50 && Math.round((weather5*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">4 AM </br> <%= Math.round((weather5*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather5*(9/5)+32)) < 40 && Math.round((weather5*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">4 AM </br> <%= Math.round((weather5*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather5*(9/5)+32)) < 30 && Math.round((weather5*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">4 AM </br> <%= Math.round((weather5*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather5*(9/5)+32)) < 20 && Math.round((weather5*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">4 AM </br> <%= Math.round((weather5*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather5*(9/5)+32)) < 10 && Math.round((weather5*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">4 AM </br> <%= Math.round((weather5*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather5*(9/5)+32)) < 0 && Math.round((weather5*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">4 AM </br> <%= Math.round((weather5*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather5*(9/5)+32)) < -10 && Math.round((weather5*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">4 AM </br> <%= Math.round((weather5*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather5*(9/5)+32)) < -20 && Math.round((weather5*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">4 AM </br> <%= Math.round((weather5*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">4 AM </br> <%= Math.round((weather5*(9/5)+32)) %>°F</h2>
+        <% } %>
+        <% if(Math.round((weather6*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">5 AM </br> <%= Math.round((weather6*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather6*(9/5)+32)) < 100 && Math.round((weather6*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">5 AM </br> <%= Math.round((weather6*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather6*(9/5)+32)) < 90 && Math.round((weather6*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">5 AM </br> <%= Math.round((weather6*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather6*(9/5)+32)) < 80 && Math.round((weather6*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">5 AM </br> <%= Math.round((weather6*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather6*(9/5)+32)) < 70 && Math.round((weather6*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">5 AM </br> <%= Math.round((weather6*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather6*(9/5)+32)) < 60 && Math.round((weather6*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">5 AM </br> <%= Math.round((weather6*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather6*(9/5)+32)) < 50 && Math.round((weather6*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">5 AM </br> <%= Math.round((weather6*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather6*(9/5)+32)) < 40 && Math.round((weather6*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">5 AM </br> <%= Math.round((weather6*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather6*(9/5)+32)) < 30 && Math.round((weather6*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">5 AM </br> <%= Math.round((weather6*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather6*(9/5)+32)) < 20 && Math.round((weather6*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">5 AM </br> <%= Math.round((weather6*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather6*(9/5)+32)) < 10 && Math.round((weather6*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">5 AM </br> <%= Math.round((weather6*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather6*(9/5)+32)) < 0 && Math.round((weather6*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">5 AM </br> <%= Math.round((weather6*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather6*(9/5)+32)) < -10 && Math.round((weather6*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">5 AM </br> <%= Math.round((weather6*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather6*(9/5)+32)) < -20 && Math.round((weather6*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">5 AM </br> <%= Math.round((weather6*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">5 AM </br> <%= Math.round((weather6*(9/5)+32)) %>°F</h2>
+        <% } %>
+        <% if(Math.round((weather7*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">6 AM </br> <%= Math.round((weather7*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather7*(9/5)+32)) < 100 && Math.round((weather7*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">6 AM </br> <%= Math.round((weather7*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather7*(9/5)+32)) < 90 && Math.round((weather7*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">6 AM </br> <%= Math.round((weather7*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather7*(9/5)+32)) < 80 && Math.round((weather7*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">6 AM </br> <%= Math.round((weather7*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather7*(9/5)+32)) < 70 && Math.round((weather7*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">6 AM </br> <%= Math.round((weather7*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather7*(9/5)+32)) < 60 && Math.round((weather7*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">6 AM </br> <%= Math.round((weather7*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather7*(9/5)+32)) < 50 && Math.round((weather7*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">6 AM </br> <%= Math.round((weather7*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather7*(9/5)+32)) < 40 && Math.round((weather7*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">6 AM </br> <%= Math.round((weather7*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather7*(9/5)+32)) < 30 && Math.round((weather7*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">6 AM </br> <%= Math.round((weather7*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather7*(9/5)+32)) < 20 && Math.round((weather7*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">6 AM </br> <%= Math.round((weather7*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather7*(9/5)+32)) < 10 && Math.round((weather7*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">6 AM </br> <%= Math.round((weather7*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather7*(9/5)+32)) < 0 && Math.round((weather7*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">6 AM </br> <%= Math.round((weather7*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather7*(9/5)+32)) < -10 && Math.round((weather7*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">6 AM </br> <%= Math.round((weather7*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather7*(9/5)+32)) < -20 && Math.round((weather7*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">6 AM </br> <%= Math.round((weather7*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">6 AM </br> <%= Math.round((weather7*(9/5)+32)) %>°F</h2>
+        <% } %>
+        <% if(Math.round((weather8*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">7 AM </br> <%= Math.round((weather8*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather8*(9/5)+32)) < 100 && Math.round((weather8*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">7 AM </br> <%= Math.round((weather8*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather8*(9/5)+32)) < 90 && Math.round((weather8*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">7 AM </br> <%= Math.round((weather8*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather8*(9/5)+32)) < 80 && Math.round((weather8*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">7 AM </br> <%= Math.round((weather8*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather8*(9/5)+32)) < 70 && Math.round((weather8*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">7 AM </br> <%= Math.round((weather8*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather8*(9/5)+32)) < 60 && Math.round((weather8*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">7 AM </br> <%= Math.round((weather8*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather8*(9/5)+32)) < 50 && Math.round((weather8*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">7 AM </br> <%= Math.round((weather8*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather8*(9/5)+32)) < 40 && Math.round((weather8*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">7 AM </br> <%= Math.round((weather8*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather8*(9/5)+32)) < 30 && Math.round((weather8*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">7 AM </br> <%= Math.round((weather8*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather8*(9/5)+32)) < 20 && Math.round((weather8*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">7 AM </br> <%= Math.round((weather8*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather8*(9/5)+32)) < 10 && Math.round((weather8*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">7 AM </br> <%= Math.round((weather8*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather8*(9/5)+32)) < 0 && Math.round((weather8*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">7 AM </br> <%= Math.round((weather8*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather8*(9/5)+32)) < -10 && Math.round((weather8*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">7 AM </br> <%= Math.round((weather8*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather8*(9/5)+32)) < -20 && Math.round((weather8*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">7 AM </br> <%= Math.round((weather8*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">7 AM </br> <%= Math.round((weather8*(9/5)+32)) %>°F</h2>
+        <% } %>
+        <% if(Math.round((weather9*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">8 AM </br> <%= Math.round((weather9*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather9*(9/5)+32)) < 100 && Math.round((weather9*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">8 AM </br> <%= Math.round((weather9*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather9*(9/5)+32)) < 90 && Math.round((weather9*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">8 AM </br> <%= Math.round((weather9*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather9*(9/5)+32)) < 80 && Math.round((weather9*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">8 AM </br> <%= Math.round((weather9*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather9*(9/5)+32)) < 70 && Math.round((weather9*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">8 AM </br> <%= Math.round((weather9*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather9*(9/5)+32)) < 60 && Math.round((weather9*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">8 AM </br> <%= Math.round((weather9*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather9*(9/5)+32)) < 50 && Math.round((weather9*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">8 AM </br> <%= Math.round((weather9*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather9*(9/5)+32)) < 40 && Math.round((weather9*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">8 AM </br> <%= Math.round((weather9*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather9*(9/5)+32)) < 30 && Math.round((weather9*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">8 AM </br> <%= Math.round((weather9*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather9*(9/5)+32)) < 20 && Math.round((weather9*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">8 AM </br> <%= Math.round((weather9*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather9*(9/5)+32)) < 10 && Math.round((weather9*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">8 AM </br> <%= Math.round((weather9*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather9*(9/5)+32)) < 0 && Math.round((weather9*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">8 AM </br> <%= Math.round((weather9*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather9*(9/5)+32)) < -10 && Math.round((weather9*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">8 AM </br> <%= Math.round((weather9*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather9*(9/5)+32)) < -20 && Math.round((weather9*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">8 AM </br> <%= Math.round((weather9*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">8 AM </br> <%= Math.round((weather9*(9/5)+32)) %>°F</h2>
+        <% } %>
+        <% if(Math.round((weather10*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">9 AM </br> <%= Math.round((weather10*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather10*(9/5)+32)) < 100 && Math.round((weather10*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">9 AM </br> <%= Math.round((weather10*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather10*(9/5)+32)) < 90 && Math.round((weather10*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">9 AM </br> <%= Math.round((weather10*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather10*(9/5)+32)) < 80 && Math.round((weather10*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">9 AM </br> <%= Math.round((weather10*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather10*(9/5)+32)) < 70 && Math.round((weather10*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">9 AM </br> <%= Math.round((weather10*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather10*(9/5)+32)) < 60 && Math.round((weather10*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">9 AM </br> <%= Math.round((weather10*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather10*(9/5)+32)) < 50 && Math.round((weather10*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">9 AM </br> <%= Math.round((weather10*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather10*(9/5)+32)) < 40 && Math.round((weather10*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">9 AM </br> <%= Math.round((weather10*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather10*(9/5)+32)) < 30 && Math.round((weather10*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">9 AM </br> <%= Math.round((weather10*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather10*(9/5)+32)) < 20 && Math.round((weather10*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">9 AM </br> <%= Math.round((weather10*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather10*(9/5)+32)) < 10 && Math.round((weather10*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">9 AM </br> <%= Math.round((weather10*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather10*(9/5)+32)) < 0 && Math.round((weather10*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">9 AM </br> <%= Math.round((weather10*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather10*(9/5)+32)) < -10 && Math.round((weather10*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">9 AM </br> <%= Math.round((weather10*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather10*(9/5)+32)) < -20 && Math.round((weather10*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">9 AM </br> <%= Math.round((weather10*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">9 AM </br> <%= Math.round((weather10*(9/5)+32)) %>°F</h2>
+        <% } %>
+        <% if(Math.round((weather11*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">10 AM </br> <%= Math.round((weather11*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather11*(9/5)+32)) < 100 && Math.round((weather11*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">10 AM </br> <%= Math.round((weather11*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather11*(9/5)+32)) < 90 && Math.round((weather11*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">10 AM </br> <%= Math.round((weather11*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather11*(9/5)+32)) < 80 && Math.round((weather11*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">10 AM </br> <%= Math.round((weather11*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather11*(9/5)+32)) < 70 && Math.round((weather11*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">10 AM </br> <%= Math.round((weather11*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather11*(9/5)+32)) < 60 && Math.round((weather11*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">10 AM </br> <%= Math.round((weather11*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather11*(9/5)+32)) < 50 && Math.round((weather11*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">10 AM </br> <%= Math.round((weather11*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather11*(9/5)+32)) < 40 && Math.round((weather11*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">10 AM </br> <%= Math.round((weather11*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather11*(9/5)+32)) < 30 && Math.round((weather11*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">10 AM </br> <%= Math.round((weather11*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather11*(9/5)+32)) < 20 && Math.round((weather11*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">10 AM </br> <%= Math.round((weather11*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather11*(9/5)+32)) < 10 && Math.round((weather11*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">10 AM </br> <%= Math.round((weather11*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather11*(9/5)+32)) < 0 && Math.round((weather11*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">10 AM </br> <%= Math.round((weather11*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather11*(9/5)+32)) < -10 && Math.round((weather11*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">10 AM </br> <%= Math.round((weather11*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather11*(9/5)+32)) < -20 && Math.round((weather11*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">10 AM </br> <%= Math.round((weather11*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">10 AM </br> <%= Math.round((weather11*(9/5)+32)) %>°F</h2>
+        <% } %>
+        <% if(Math.round((weather12*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">11 AM </br> <%= Math.round((weather12*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather12*(9/5)+32)) < 100 && Math.round((weather12*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">11 AM </br> <%= Math.round((weather12*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather12*(9/5)+32)) < 90 && Math.round((weather12*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">11 AM </br> <%= Math.round((weather12*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather12*(9/5)+32)) < 80 && Math.round((weather12*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">11 AM </br> <%= Math.round((weather12*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather12*(9/5)+32)) < 70 && Math.round((weather12*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">11 AM </br> <%= Math.round((weather12*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather12*(9/5)+32)) < 60 && Math.round((weather12*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">11 AM </br> <%= Math.round((weather12*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather12*(9/5)+32)) < 50 && Math.round((weather12*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">11 AM </br> <%= Math.round((weather12*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather12*(9/5)+32)) < 40 && Math.round((weather12*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">11 AM </br> <%= Math.round((weather12*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather12*(9/5)+32)) < 30 && Math.round((weather12*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">11 AM </br> <%= Math.round((weather12*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather12*(9/5)+32)) < 20 && Math.round((weather12*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">11 AM </br> <%= Math.round((weather12*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather12*(9/5)+32)) < 10 && Math.round((weather12*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">11 AM </br> <%= Math.round((weather12*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather12*(9/5)+32)) < 0 && Math.round((weather12*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">11 AM </br> <%= Math.round((weather12*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather12*(9/5)+32)) < -10 && Math.round((weather12*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">11 AM </br> <%= Math.round((weather12*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather12*(9/5)+32)) < -20 && Math.round((weather12*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">11 AM </br> <%= Math.round((weather12*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">11 AM </br> <%= Math.round((weather12*(9/5)+32)) %>°F</h2>
+        <% } %>
+        <% if(Math.round((weather13*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">12 PM </br> <%= Math.round((weather13*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather13*(9/5)+32)) < 100 && Math.round((weather13*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">12 PM </br> <%= Math.round((weather13*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather13*(9/5)+32)) < 90 && Math.round((weather13*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">12 PM </br> <%= Math.round((weather13*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather13*(9/5)+32)) < 80 && Math.round((weather13*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">12 PM </br> <%= Math.round((weather13*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather13*(9/5)+32)) < 70 && Math.round((weather13*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">12 PM </br> <%= Math.round((weather13*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather13*(9/5)+32)) < 60 && Math.round((weather13*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">12 PM </br> <%= Math.round((weather13*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather13*(9/5)+32)) < 50 && Math.round((weather13*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">12 PM </br> <%= Math.round((weather13*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather13*(9/5)+32)) < 40 && Math.round((weather13*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">12 PM </br> <%= Math.round((weather13*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather13*(9/5)+32)) < 30 && Math.round((weather13*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">12 PM </br> <%= Math.round((weather13*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather13*(9/5)+32)) < 20 && Math.round((weather13*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">12 PM </br> <%= Math.round((weather13*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather13*(9/5)+32)) < 10 && Math.round((weather13*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">12 PM </br> <%= Math.round((weather13*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather13*(9/5)+32)) < 0 && Math.round((weather13*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">12 PM </br> <%= Math.round((weather13*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather13*(9/5)+32)) < -10 && Math.round((weather13*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">12 PM </br> <%= Math.round((weather13*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather13*(9/5)+32)) < -20 && Math.round((weather13*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">12 PM </br> <%= Math.round((weather13*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">12 PM </br> <%= Math.round((weather13*(9/5)+32)) %>°F</h2>
+        <% } %>
+        <% if(Math.round((weather14*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">1 PM </br> <%= Math.round((weather14*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather14*(9/5)+32)) < 100 && Math.round((weather14*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">1 PM </br> <%= Math.round((weather14*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather14*(9/5)+32)) < 90 && Math.round((weather14*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">1 PM </br> <%= Math.round((weather14*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather14*(9/5)+32)) < 80 && Math.round((weather14*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">1 PM </br> <%= Math.round((weather14*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather14*(9/5)+32)) < 70 && Math.round((weather14*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">1 PM </br> <%= Math.round((weather14*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather14*(9/5)+32)) < 60 && Math.round((weather14*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">1 PM </br> <%= Math.round((weather14*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather14*(9/5)+32)) < 50 && Math.round((weather14*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">1 PM </br> <%= Math.round((weather14*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather14*(9/5)+32)) < 40 && Math.round((weather14*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">1 PM </br> <%= Math.round((weather14*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather14*(9/5)+32)) < 30 && Math.round((weather14*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">1 PM </br> <%= Math.round((weather14*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather14*(9/5)+32)) < 20 && Math.round((weather14*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">1 PM </br> <%= Math.round((weather14*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather14*(9/5)+32)) < 10 && Math.round((weather14*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">1 PM </br> <%= Math.round((weather14*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather14*(9/5)+32)) < 0 && Math.round((weather14*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">1 PM </br> <%= Math.round((weather14*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather14*(9/5)+32)) < -10 && Math.round((weather14*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">1 PM </br> <%= Math.round((weather14*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather14*(9/5)+32)) < -20 && Math.round((weather14*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">1 PM </br> <%= Math.round((weather14*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">1 PM </br> <%= Math.round((weather14*(9/5)+32)) %>°F</h2>
+        <% } %>
+        <% if(Math.round((weather15*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">2 PM </br> <%= Math.round((weather15*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather15*(9/5)+32)) < 100 && Math.round((weather15*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">2 PM </br> <%= Math.round((weather15*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather15*(9/5)+32)) < 90 && Math.round((weather15*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">2 PM </br> <%= Math.round((weather15*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather15*(9/5)+32)) < 80 && Math.round((weather15*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">2 PM </br> <%= Math.round((weather15*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather15*(9/5)+32)) < 70 && Math.round((weather15*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">2 PM </br> <%= Math.round((weather15*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather15*(9/5)+32)) < 60 && Math.round((weather15*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">2 PM </br> <%= Math.round((weather15*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather15*(9/5)+32)) < 50 && Math.round((weather15*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">2 PM </br> <%= Math.round((weather15*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather15*(9/5)+32)) < 40 && Math.round((weather15*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">2 PM </br> <%= Math.round((weather15*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather15*(9/5)+32)) < 30 && Math.round((weather15*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">2 PM </br> <%= Math.round((weather15*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather15*(9/5)+32)) < 20 && Math.round((weather15*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">2 PM </br> <%= Math.round((weather15*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather15*(9/5)+32)) < 10 && Math.round((weather15*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">2 PM </br> <%= Math.round((weather15*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather15*(9/5)+32)) < 0 && Math.round((weather15*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">2 PM </br> <%= Math.round((weather15*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather15*(9/5)+32)) < -10 && Math.round((weather15*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">2 PM </br> <%= Math.round((weather15*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather15*(9/5)+32)) < -20 && Math.round((weather15*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">2 PM </br> <%= Math.round((weather15*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">2 PM </br> <%= Math.round((weather15*(9/5)+32)) %>°F</h2>
+        <% } %>
+        <% if(Math.round((weather16*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">3 PM </br> <%= Math.round((weather16*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather16*(9/5)+32)) < 100 && Math.round((weather16*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">3 PM </br> <%= Math.round((weather16*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather16*(9/5)+32)) < 90 && Math.round((weather16*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">3 PM </br> <%= Math.round((weather16*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather16*(9/5)+32)) < 80 && Math.round((weather16*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">3 PM </br> <%= Math.round((weather16*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather16*(9/5)+32)) < 70 && Math.round((weather16*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">3 PM </br> <%= Math.round((weather16*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather16*(9/5)+32)) < 60 && Math.round((weather16*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">3 PM </br> <%= Math.round((weather16*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather16*(9/5)+32)) < 50 && Math.round((weather16*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">3 PM </br> <%= Math.round((weather16*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather16*(9/5)+32)) < 40 && Math.round((weather16*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">3 PM </br> <%= Math.round((weather16*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather16*(9/5)+32)) < 30 && Math.round((weather16*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">3 PM </br> <%= Math.round((weather16*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather16*(9/5)+32)) < 20 && Math.round((weather16*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">3 PM </br> <%= Math.round((weather16*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather16*(9/5)+32)) < 10 && Math.round((weather16*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">3 PM </br> <%= Math.round((weather16*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather16*(9/5)+32)) < 0 && Math.round((weather16*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">3 PM </br> <%= Math.round((weather16*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather16*(9/5)+32)) < -10 && Math.round((weather16*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">3 PM </br> <%= Math.round((weather16*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather16*(9/5)+32)) < -20 && Math.round((weather16*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">3 PM </br> <%= Math.round((weather16*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">3 PM </br> <%= Math.round((weather16*(9/5)+32)) %>°F</h2>
+        <% } %>
+        <% if(Math.round((weather17*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">4 PM </br> <%= Math.round((weather17*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather17*(9/5)+32)) < 100 && Math.round((weather17*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">4 PM </br> <%= Math.round((weather17*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather17*(9/5)+32)) < 90 && Math.round((weather17*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">4 PM </br> <%= Math.round((weather17*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather17*(9/5)+32)) < 80 && Math.round((weather17*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">4 PM </br> <%= Math.round((weather17*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather17*(9/5)+32)) < 70 && Math.round((weather17*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">4 PM </br> <%= Math.round((weather17*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather17*(9/5)+32)) < 60 && Math.round((weather17*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">4 PM </br> <%= Math.round((weather17*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather17*(9/5)+32)) < 50 && Math.round((weather17*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">4 PM </br> <%= Math.round((weather17*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather17*(9/5)+32)) < 40 && Math.round((weather17*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">4 PM </br> <%= Math.round((weather17*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather17*(9/5)+32)) < 30 && Math.round((weather17*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">4 PM </br> <%= Math.round((weather17*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather17*(9/5)+32)) < 20 && Math.round((weather17*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">4 PM </br> <%= Math.round((weather17*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather17*(9/5)+32)) < 10 && Math.round((weather17*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">4 PM </br> <%= Math.round((weather17*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather17*(9/5)+32)) < 0 && Math.round((weather17*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">4 PM </br> <%= Math.round((weather17*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather17*(9/5)+32)) < -10 && Math.round((weather17*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">4 PM </br> <%= Math.round((weather17*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather17*(9/5)+32)) < -20 && Math.round((weather17*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">4 PM </br> <%= Math.round((weather17*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">4 PM </br> <%= Math.round((weather17*(9/5)+32)) %>°F</h2>
+        <% } %>
+        <% if(Math.round((weather18*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">5 PM </br> <%= Math.round((weather18*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather18*(9/5)+32)) < 100 && Math.round((weather18*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">5 PM </br> <%= Math.round((weather18*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather18*(9/5)+32)) < 90 && Math.round((weather18*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">5 PM </br> <%= Math.round((weather18*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather18*(9/5)+32)) < 80 && Math.round((weather18*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">5 PM </br> <%= Math.round((weather18*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather18*(9/5)+32)) < 70 && Math.round((weather18*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">5 PM </br> <%= Math.round((weather18*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather18*(9/5)+32)) < 60 && Math.round((weather18*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">5 PM </br> <%= Math.round((weather18*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather18*(9/5)+32)) < 50 && Math.round((weather18*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">5 PM </br> <%= Math.round((weather18*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather18*(9/5)+32)) < 40 && Math.round((weather18*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">5 PM </br> <%= Math.round((weather18*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather18*(9/5)+32)) < 30 && Math.round((weather18*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">5 PM </br> <%= Math.round((weather18*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather18*(9/5)+32)) < 20 && Math.round((weather18*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">5 PM </br> <%= Math.round((weather18*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather18*(9/5)+32)) < 10 && Math.round((weather18*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">5 PM </br> <%= Math.round((weather18*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather18*(9/5)+32)) < 0 && Math.round((weather18*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">5 PM </br> <%= Math.round((weather18*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather18*(9/5)+32)) < -10 && Math.round((weather18*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">5 PM </br> <%= Math.round((weather18*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather18*(9/5)+32)) < -20 && Math.round((weather18*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">5 PM </br> <%= Math.round((weather18*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">5 PM </br> <%= Math.round((weather18*(9/5)+32)) %>°F</h2>
+        <% } %>
+        <% if(Math.round((weather19*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">6 PM </br> <%= Math.round((weather19*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather19*(9/5)+32)) < 100 && Math.round((weather19*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">6 PM </br> <%= Math.round((weather19*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather19*(9/5)+32)) < 90 && Math.round((weather19*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">6 PM </br> <%= Math.round((weather19*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather19*(9/5)+32)) < 80 && Math.round((weather19*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">6 PM </br> <%= Math.round((weather19*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather19*(9/5)+32)) < 70 && Math.round((weather19*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">6 PM </br> <%= Math.round((weather19*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather19*(9/5)+32)) < 60 && Math.round((weather19*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">6 PM </br> <%= Math.round((weather19*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather19*(9/5)+32)) < 50 && Math.round((weather19*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">6 PM </br> <%= Math.round((weather19*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather19*(9/5)+32)) < 40 && Math.round((weather19*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">6 PM </br> <%= Math.round((weather19*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather19*(9/5)+32)) < 30 && Math.round((weather19*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">6 PM </br> <%= Math.round((weather19*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather19*(9/5)+32)) < 20 && Math.round((weather19*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">6 PM </br> <%= Math.round((weather19*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather19*(9/5)+32)) < 10 && Math.round((weather19*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">6 PM </br> <%= Math.round((weather19*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather19*(9/5)+32)) < 0 && Math.round((weather19*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">6 PM </br> <%= Math.round((weather19*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather19*(9/5)+32)) < -10 && Math.round((weather19*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">6 PM </br> <%= Math.round((weather19*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather19*(9/5)+32)) < -20 && Math.round((weather19*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">6 PM </br> <%= Math.round((weather19*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">6 PM </br> <%= Math.round((weather19*(9/5)+32)) %>°F</h2>
+        <% } %>
+        <% if(Math.round((weather20*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">7 PM </br> <%= Math.round((weather20*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather20*(9/5)+32)) < 100 && Math.round((weather20*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">7 PM </br> <%= Math.round((weather20*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather20*(9/5)+32)) < 90 && Math.round((weather20*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">7 PM </br> <%= Math.round((weather20*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather20*(9/5)+32)) < 80 && Math.round((weather20*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">7 PM </br> <%= Math.round((weather20*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather20*(9/5)+32)) < 70 && Math.round((weather20*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">7 PM </br> <%= Math.round((weather20*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather20*(9/5)+32)) < 60 && Math.round((weather20*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">7 PM </br> <%= Math.round((weather20*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather20*(9/5)+32)) < 50 && Math.round((weather20*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">7 PM </br> <%= Math.round((weather20*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather20*(9/5)+32)) < 40 && Math.round((weather20*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">7 PM </br> <%= Math.round((weather20*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather20*(9/5)+32)) < 30 && Math.round((weather20*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">7 PM </br> <%= Math.round((weather20*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather20*(9/5)+32)) < 20 && Math.round((weather20*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">7 PM </br> <%= Math.round((weather20*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather20*(9/5)+32)) < 10 && Math.round((weather20*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">7 PM </br> <%= Math.round((weather20*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather20*(9/5)+32)) < 0 && Math.round((weather20*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">7 PM </br> <%= Math.round((weather20*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather20*(9/5)+32)) < -10 && Math.round((weather20*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">7 PM </br> <%= Math.round((weather20*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather20*(9/5)+32)) < -20 && Math.round((weather20*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">7 PM </br> <%= Math.round((weather20*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">7 PM </br> <%= Math.round((weather20*(9/5)+32)) %>°F</h2>
+        <% } %>
+        <% if(Math.round((weather21*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">8 PM </br> <%= Math.round((weather21*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather21*(9/5)+32)) < 100 && Math.round((weather21*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">8 PM </br> <%= Math.round((weather21*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather21*(9/5)+32)) < 90 && Math.round((weather21*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">8 PM </br> <%= Math.round((weather21*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather21*(9/5)+32)) < 80 && Math.round((weather21*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">8 PM </br> <%= Math.round((weather21*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather21*(9/5)+32)) < 70 && Math.round((weather21*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">8 PM </br> <%= Math.round((weather21*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather21*(9/5)+32)) < 60 && Math.round((weather21*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">8 PM </br> <%= Math.round((weather21*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather21*(9/5)+32)) < 50 && Math.round((weather21*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">8 PM </br> <%= Math.round((weather21*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather21*(9/5)+32)) < 40 && Math.round((weather21*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">8 PM </br> <%= Math.round((weather21*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather21*(9/5)+32)) < 30 && Math.round((weather21*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">8 PM </br> <%= Math.round((weather21*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather21*(9/5)+32)) < 20 && Math.round((weather21*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">8 PM </br> <%= Math.round((weather21*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather21*(9/5)+32)) < 10 && Math.round((weather21*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">8 PM </br> <%= Math.round((weather21*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather21*(9/5)+32)) < 0 && Math.round((weather21*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">8 PM </br> <%= Math.round((weather21*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather21*(9/5)+32)) < -10 && Math.round((weather21*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">8 PM </br> <%= Math.round((weather21*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather21*(9/5)+32)) < -20 && Math.round((weather21*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">8 PM </br> <%= Math.round((weather21*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">8 PM </br> <%= Math.round((weather21*(9/5)+32)) %>°F</h2>
+        <% } %>
+        <% if(Math.round((weather22*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">9 PM </br> <%= Math.round((weather22*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather22*(9/5)+32)) < 100 && Math.round((weather22*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">9 PM </br> <%= Math.round((weather22*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather22*(9/5)+32)) < 90 && Math.round((weather22*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">9 PM </br> <%= Math.round((weather22*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather22*(9/5)+32)) < 80 && Math.round((weather22*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">9 PM </br> <%= Math.round((weather22*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather22*(9/5)+32)) < 70 && Math.round((weather22*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">9 PM </br> <%= Math.round((weather22*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather22*(9/5)+32)) < 60 && Math.round((weather22*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">9 PM </br> <%= Math.round((weather22*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather22*(9/5)+32)) < 50 && Math.round((weather22*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">9 PM </br> <%= Math.round((weather22*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather22*(9/5)+32)) < 40 && Math.round((weather22*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">9 PM </br> <%= Math.round((weather22*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather22*(9/5)+32)) < 30 && Math.round((weather22*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">9 PM </br> <%= Math.round((weather22*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather22*(9/5)+32)) < 20 && Math.round((weather22*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">9 PM </br> <%= Math.round((weather22*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather22*(9/5)+32)) < 10 && Math.round((weather22*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">9 PM </br> <%= Math.round((weather22*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather22*(9/5)+32)) < 0 && Math.round((weather22*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">9 PM </br> <%= Math.round((weather22*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather22*(9/5)+32)) < -10 && Math.round((weather22*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">9 PM </br> <%= Math.round((weather22*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather22*(9/5)+32)) < -20 && Math.round((weather22*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">9 PM </br> <%= Math.round((weather22*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">9 PM </br> <%= Math.round((weather22*(9/5)+32)) %>°F</h2>
+        <% } %>
+        <% if(Math.round((weather23*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">10 PM </br> <%= Math.round((weather23*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather23*(9/5)+32)) < 100 && Math.round((weather23*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">10 PM </br> <%= Math.round((weather23*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather23*(9/5)+32)) < 90 && Math.round((weather23*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">10 PM </br> <%= Math.round((weather23*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather23*(9/5)+32)) < 80 && Math.round((weather23*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">10 PM </br> <%= Math.round((weather23*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather23*(9/5)+32)) < 70 && Math.round((weather23*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">10 PM </br> <%= Math.round((weather23*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather23*(9/5)+32)) < 60 && Math.round((weather23*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">10 PM </br> <%= Math.round((weather23*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather23*(9/5)+32)) < 50 && Math.round((weather23*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">10 PM </br> <%= Math.round((weather23*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather23*(9/5)+32)) < 40 && Math.round((weather23*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">10 PM </br> <%= Math.round((weather23*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather23*(9/5)+32)) < 30 && Math.round((weather23*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">10 PM </br> <%= Math.round((weather23*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather23*(9/5)+32)) < 20 && Math.round((weather23*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">10 PM </br> <%= Math.round((weather23*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather23*(9/5)+32)) < 10 && Math.round((weather23*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">10 PM </br> <%= Math.round((weather23*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather23*(9/5)+32)) < 0 && Math.round((weather23*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">10 PM </br> <%= Math.round((weather23*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather23*(9/5)+32)) < -10 && Math.round((weather23*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">10 PM </br> <%= Math.round((weather23*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather23*(9/5)+32)) < -20 && Math.round((weather23*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">10 PM </br> <%= Math.round((weather23*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">10 PM </br> <%= Math.round((weather23*(9/5)+32)) %>°F</h2>
+        <% } %>
+        <% if(Math.round((weather24*(9/5)+32)) >= 100){ %>
+          <h2 class = "gridItem100">11 PM </br> <%= Math.round((weather24*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather24*(9/5)+32)) < 100 && Math.round((weather24*(9/5)+32)) >= 90) { %>
+          <h2 class = "gridItem90">11 PM </br> <%= Math.round((weather24*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather24*(9/5)+32)) < 90 && Math.round((weather24*(9/5)+32)) >= 80){ %>  
+          <h2 class = "gridItem80">11 PM </br> <%= Math.round((weather24*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather24*(9/5)+32)) < 80 && Math.round((weather24*(9/5)+32)) >= 70){ %>
+          <h2 class = "gridItem70">11 PM </br> <%= Math.round((weather24*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather24*(9/5)+32)) < 70 && Math.round((weather24*(9/5)+32)) >= 60){ %>
+          <h2 class = "gridItem60">11 PM </br> <%= Math.round((weather24*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather24*(9/5)+32)) < 60 && Math.round((weather24*(9/5)+32)) >= 50){ %>
+          <h2 class = "gridItem50">11 PM </br> <%= Math.round((weather24*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather24*(9/5)+32)) < 50 && Math.round((weather24*(9/5)+32)) >= 40){ %>  
+          <h2 class = "gridItem40">11 PM </br> <%= Math.round((weather24*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather24*(9/5)+32)) < 40 && Math.round((weather24*(9/5)+32)) >= 30){ %>
+          <h2 class = "gridItem30">11 PM </br> <%= Math.round((weather24*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather24*(9/5)+32)) < 30 && Math.round((weather24*(9/5)+32)) >= 20){ %>
+          <h2 class = "gridItem20">11 PM </br> <%= Math.round((weather24*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather24*(9/5)+32)) < 20 && Math.round((weather24*(9/5)+32)) >= 10){ %> 
+          <h2 class = "gridItem10">11 PM </br> <%= Math.round((weather24*(9/5)+32)) %>°F</h2> 
+        <% } else if (Math.round((weather24*(9/5)+32)) < 10 && Math.round((weather24*(9/5)+32)) >= 0){ %>
+          <h2 class = "gridItem0">11 PM </br> <%= Math.round((weather24*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather24*(9/5)+32)) < 0 && Math.round((weather24*(9/5)+32)) >= -10){ %>
+          <h2 class = "gridItem-10">11 PM </br> <%= Math.round((weather24*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather24*(9/5)+32)) < -10 && Math.round((weather24*(9/5)+32)) >= -20){ %>
+          <h2 class = "gridItem-20">11 PM </br> <%= Math.round((weather24*(9/5)+32)) %>°F</h2>
+        <% } else if (Math.round((weather24*(9/5)+32)) < -20 && Math.round((weather24*(9/5)+32)) >= -30){ %>
+          <h2 class = "gridItem-30">11 PM </br> <%= Math.round((weather24*(9/5)+32)) %>°F</h2>
+        <% } else { %> 
+          <h2 class = "gridItem-40">11 PM </br> <%= Math.round((weather24*(9/5)+32)) %>°F</h2>
+        <% } %>
+      </div>
+      
+      <div class = "resetBox">
+        <a href = "/"><img src = "/images/sun.png"></a>
+      </div>
+    <% } else { %>
+      <div class = "title">
+        <h1>What was the weather like on...</h1>
+      </div>
+      <form id = "myForm" method = "post">
+        <input class = "inputB" placeholder="City" type="text" id="inputCity" name="city">
+        <input class = "inputB" placeholder="State" type="text" id="inputState" name="state">
+        <select name = "monthSelect" class = "inputB" id = "monthSelect">
+          <option value="01">January</option>
+          <option value="02">February</option>
+          <option value="03">March</option>
+          <option value="04">April</option>
+          <option value="05">May</option>
+          <option value="06">June</option>
+          <option value="07">July</option>
+          <option value="08">August</option>
+          <option value="09">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+
+        <select name = "daySelect" class = "inputB" id = "daySelect">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+          <option value="31">31</option>
+        </select> 
+          
+        <input class = "inputB" placeholder="Year" type="text" id="inputYear" name="year">
+        <input class = "submitB" id="submit" type="submit" value="Go!" formaction="/townInput">
+      </form>
+      <div class = "resetBox frontPageReset">
+        <a href = "/"><img src = "/images/sun.png"></a>
+      </div>
+      <div id = "foot">
+        <footer>API can only can retrieve data after 11/24/2022</footer>
+      </div>
+    <% } %>
+</body>
+</html>
