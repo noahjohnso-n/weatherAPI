@@ -767,8 +767,8 @@
         <h1>What was the weather like on...</h1>
       </div>
       <form id = "myForm" method = "post">
-        <input class = "inputB" placeholder="City" type="text" id="inputCity" name="city">
-        <input class = "inputB" placeholder="State" type="text" id="inputState" name="state">
+        <input class = "inputB" placeholder="City" type="text" id="inputCity" name="city" autocomplete="off">
+        <input class = "inputB" placeholder="State" type="text" id="inputState" name="state" autocomplete="off">
         <select name = "monthSelect" class = "inputB" id = "monthSelect">
           <option value="01">January</option>
           <option value="02">February</option>
@@ -818,8 +818,8 @@
           <option value="31">31</option>
         </select> 
           
-        <input class = "inputB" placeholder="Year" type="text" id="inputYear" name="year">
-        <input class = "submitB" id="submit" type="submit" value="Go!" formaction="/townInput">
+        <input class = "inputB" placeholder="Year" type="text" id="inputYear" name="year" autocomplete="off">
+        <input class = "submitB" id="submit" type="submit" value="Go!" formaction="/townInput" autocomplete="off">
       </form>
       <div class = "resetBox frontPageReset">
         <a href = "/"><img src = "/images/sun.png"></a>
